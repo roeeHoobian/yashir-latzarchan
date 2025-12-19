@@ -95,10 +95,13 @@ html[dir="rtl"] .menu-drawer {
 /* When menu is open, slide to 0 and make visible */
 html[dir="rtl"] .menu-open > .menu-drawer,
 html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
-html[dir="rtl"] details[open] > .menu-drawer {
+html[dir="rtl"] details[open] > .menu-drawer,
+html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
   transform: translateX(0) !important;
   visibility: visible !important;
   opacity: 1 !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 /* Fix submenu positioning */
@@ -215,13 +218,17 @@ html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__animated-element {
    HEADER ACTIONS RTL FIXES
    =========================================== */
 
+/* Ensure cart icon and header actions are visible on mobile */
 html[dir="rtl"] header-actions {
-  justify-self: flex-start;
+  display: flex !important;
+  visibility: visible !important;
 }
 
-html[dir="rtl"] .header__column--right header-actions {
-  margin-inline-start: 0;
-  margin-inline-end: calc(var(--gap-md) * -1);
+html[dir="rtl"] .header-actions__action,
+html[dir="rtl"] .action__cart,
+html[dir="rtl"] .header-actions__cart-icon {
+  display: flex !important;
+  visibility: visible !important;
 }
 
 /* ===========================================
@@ -258,6 +265,13 @@ html[dir="rtl"] .dialog-drawer--right[open] {
 html[dir="rtl"] .menu-drawer__backdrop {
   left: 0;
   right: 0;
+}
+
+/* Show backdrop when menu is open */
+html[dir="rtl"] .menu-open .menu-drawer__backdrop,
+html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__backdrop {
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* Fix mobile header column alignment */
@@ -325,11 +339,15 @@ html[dir="rtl"] .menu-drawer-container:not([open]) > .menu-drawer {
 }
 
 /* Ensure menu drawer is visible when open */
-html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer {
+html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
+html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
   visibility: visible !important;
   pointer-events: auto;
   opacity: 1 !important;
   transform: translateX(0) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  z-index: 9999 !important;
 }
 
 /* ===========================================
