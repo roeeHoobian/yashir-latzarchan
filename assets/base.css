@@ -31,6 +31,7 @@ html {
   scrollbar-width: thin;
   scrollbar-color: rgb(var(--color-foreground-rgb) / var(--opacity-40)) var(--color-background);
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html[scroll-lock] {
@@ -1665,7 +1666,7 @@ media-gallery.media-gallery--grid .media-gallery__grid .product-media-container 
 }
 
 zoom-dialog dialog {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   border: none;
   margin: 0;
