@@ -1,0 +1,407 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "accessibility": {
+    "account": "חשבון",
+    "cart": "עגלת קניות",
+    "cart_count": "סה״כ בעגלה",
+    "close_dialog": "סגור דיאלוג",
+    "country_region": "ארץ",
+    "country_results_count": "תוצאות {{ count }}",
+    "decrease_quantity": "הפחת כמות",
+    "discount": "החל קוד הנחה",
+    "discount_menu": "קודי הנחות",
+    "discount_applied": "{{ code }} : קוד הנחה שנטען ",
+    "filters": "סינון",
+    "filter_count": {
+      "one": "{{ count }} filter applied",
+      "other": "{{ count }} filters applied"
+    },
+    "increase_quantity": "הוסף כמות",
+    "inventory_status": "מצב מלאי",
+    "localization_region_and_language": "בחירת ארץ מקור ושפה",
+    "menu": "תפריט",
+    "nested_product": "{{ product_title }} for {{ parent_title }}",
+    "new_window": "פתח בחלון חדש",
+    "quantity": "כמות",
+    "pause_video": "עצור סרטון",
+    "play_model": "Play 3D model",
+    "play_video": "הפעל ווידאו",
+    "loading_product_recommendations": "טוען המלצות מוצר",
+    "rating": "מתוך 5 {{ rating }} הדירוג של מוצר הז הוא",
+    "remove_item": "{{ title}} הסר",
+    "reset_search": "אפס חיפוש",
+    "scroll_to": "{{ title }} גלול ל",
+    "search_results_count": "{{ count }} תוצאות חיפוש עבור \"{{ query }}\"",
+    "search_results_no_results": "לא נמצאו תוצאות עבור \"{{ query }}\"",
+    "skip_to_product_info": "Skip to product information",
+    "skip_to_results_list": "Skip to results list",
+    "skip_to_text": "Skip to content",
+    "slide_status": "Slide {{ index }} of {{ length }}",
+    "slideshow_next": "Next slide",
+    "slideshow_pause": "Pause slideshow",
+    "slideshow_play": "Play slideshow",
+    "slideshow_previous": "Previous slide",
+    "unit_price": "Unit price",
+    "find_country": "Find country"
+  },
+  "actions": {
+    "add": "הוסף",
+    "add_to_cart": "הוסף לעגלה",
+    "added": "התווסף",
+    "apply": "החל",
+    "back": "חזור",
+    "choose": "בחר",
+    "clear": "נקה",
+    "clear_all": "נקה הכל",
+    "close": "סגור",
+    "open": "פתח",
+    "continue_shopping": "המשך בקנייה",
+    "enter_password": "הכניס סיסמא",
+    "log_in_html": "יש לך כבר חשבון? <a href=\"{{ link }}\">התחבר</a> כדי להשלים את הקנייה בצורה מהירה יותר.",
+    "log_in": "התחבר",
+    "log_out": "התנתק",
+    "open_image_in_full_screen": "פתח תמונה במסך מלא",
+    "remove": "הסר",
+    "remove_discount": "הסר הנחה {{ code }}",
+    "show_all_options": "הצג את כל האפשרויות",
+    "see_items": {
+      "one": "See {{ count }} item",
+      "other": "See {{ count }} items"
+    },
+    "show_filters": "סנן",
+    "show_less": "הראה פחות",
+    "show_more": "הראה עוד",
+    "sign_in_options": "אפשרויות התחברות נוספות",
+    "view_in_your_space": "View in your space",
+    "view_all": "View all",
+    "more": "More",
+    "zoom": "Zoom",
+    "close_dialog": "Close dialog",
+    "reset": "Reset",
+    "enter_using_password": "Enter using password",
+    "sign_up": "הירשם",
+    "submit": "שלח",
+    "view_store_information": "View store information",
+    "sort": "מיין"
+  },
+  "blocks": {
+    "contact_form": {
+      "name": "שם",
+      "email": "אימייל",
+      "phone": "טלפון",
+      "comment": "תגובה",
+      "post_success": "תודה על יצירת הקשר, נחזור אליך בהקדם האפשרי!",
+      "error_heading": "בבקשה השלם את השדות הבאים:"
+    },
+    "email_signup": {
+      "label": "אימייל",
+      "placeholder": "אימייל",
+      "success": "תודה שנרשמת"
+    },
+    "filter": "Filter",
+    "load_video": "Load video: {{ description }}",
+    "sold_out": "Sold out",
+    "payment_methods": "Payment methods"
+  },
+  "blogs": {
+    "article": {
+      "comments_heading": {
+        "one": "{{ count }} comment",
+        "other": "{{ count }} comments"
+      },
+      "comment_author_separator": "•"
+    },
+    "comment_form": {
+      "email": "Email",
+      "error": "Comment failed to post, please address the following:",
+      "heading": "Leave a comment",
+      "message": "Message",
+      "moderated": "Please note, comments need to be approved before they are published.",
+      "name": "Name",
+      "post": "Post comment",
+      "success_moderated": "Comment posted, awaiting moderation",
+      "success": "Comment posted"
+    }
+  },
+  "content": {
+    "discount": "הנחה",
+    "account_title": "Account",
+    "terms_and_policies": "Terms and Policies",
+    "account_title_personalized": "Hi {{ first_name }}",
+    "account_orders": "Orders",
+    "account_profile": "Profile",
+    "blog_details_separator": "|",
+    "cart_estimated_total": "סה״כ",
+    "cart_title": "עגלה",
+    "cart_subtotal": "סכום ביניים",
+    "cart_total": "סה״כ",
+    "checkout": "Check out",
+    "collection_placeholder": "Collection title",
+    "discount_code": "קוד הנחה",
+    "shipping_discount_error": "Shipping discounts are shown at checkout after adding an address",
+    "discount_code_error": "קוד ההנחה אינו פעיל",
+    "discounts": "הנחות",
+    "duties_and_taxes_included": "Duties and taxes included.",
+    "duties_and_taxes_included_shipping_at_checkout_with_policy_html": "Duties and taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+    "duties_and_taxes_included_shipping_at_checkout_with_policy_without_discounts_html": "Duties and taxes included. Shipping is calculated at checkout.",
+    "duties_and_taxes_included_shipping_at_checkout_without_policy": "Duties and taxes included. Discounts and shipping calculated at checkout.",
+    "duties_and_taxes_included_shipping_at_checkout_without_policy_without_discounts": "Duties and taxes included. Shipping is calculated at checkout.",
+    "duties_included": "Duties included.",
+    "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_html": "Duties included. Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+    "duties_included_taxes_at_checkout_shipping_at_checkout_with_policy_without_discounts_html": "Duties included. Shipping is calculated at checkout.",
+    "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy": "Duties included. Taxes, discounts and shipping calculated at checkout.",
+    "duties_included_taxes_at_checkout_shipping_at_checkout_without_policy_without_discounts": "Duties included. Shipping is calculated at checkout.",
+    "featured_products": "Featured products",
+    "filters": "Filters",
+    "grid_view": {
+      "default_view": "Default",
+      "grid_fieldset": "Column grid",
+      "single_item": "Single",
+      "zoom_out": "Zoom out"
+    },
+    "inventory_low_stock_show_count": {
+      "one": "{{ count }} left",
+      "other": "{{ count }} left"
+    },
+    "inventory_low_stock": "Low stock",
+    "inventory_in_stock": "In stock",
+    "inventory_out_of_stock": "Out of stock",
+    "item_count": {
+      "one": "{{ count }} item",
+      "other": "{{ count }} items"
+    },
+    "language": "Language",
+    "localization_region_and_language": "Region and language",
+    "no_products_found": "No products found.",
+    "no_results_found": "No results found",
+    "page_placeholder_title": "Page title",
+    "page_placeholder_content": "Select a page to display its content.",
+    "pagination": {
+      "nav_label": "Pagination navigation",
+      "previous": "Previous",
+      "next": "Next",
+      "page": "Page {{ page }}"
+    },
+    "pickup_available_at_html": "Pickup available at <b>{{ location }}</b>",
+    "pickup_available_in": "Pickup available, {{ pickup_time }}",
+    "pickup_not_available": "Pickup currently not available",
+    "pickup_ready_in": "{{ pickup_time }}",
+    "powered_by": "This shop will be powered by",
+    "price": "Price",
+    "price_compare_at": "Compare at price",
+    "price_from": "From {{ price }}",
+    "price_regular": "Regular price",
+    "price_sale": "Sale price",
+    "price_filter_html": "The highest price is {{ price }}",
+    "product_image": "Product image",
+    "product_information": "Product information",
+    "product_total": "Product total",
+    "product_badge_sold_out": "Sold out",
+    "product_badge_sale": "Sale",
+    "product_card_placeholder": "Product title",
+    "placeholder_image": "Placeholder image",
+    "quantity": "Quantity",
+    "recently_viewed_products": "Recently viewed",
+    "reviews": "reviews",
+    "read_more": "Read more...",
+    "search_input_label": "Search",
+    "search_input_placeholder": "Search",
+    "search": "Search",
+    "search_results": "Search results",
+    "search_results_label": "Search results",
+    "search_results_no_results": "No results found for \"{{ terms }}\". Try another search.",
+    "search_results_no_results_check_spelling": "No results found for \"{{ terms }}\". Check the spelling or use a different word or phrase.",
+    "search_results_resource_articles": "Blog posts",
+    "search_results_resource_collections": "Collections",
+    "search_results_resource_pages": "Pages",
+    "search_results_resource_products": "Products",
+    "search_results_resource_products_count": {
+      "one": "{{ count }} product",
+      "other": "{{ count }} products"
+    },
+    "search_results_resource_queries": "Search suggestions",
+    "search_results_view_all": "View all",
+    "search_results_view_all_button": "View all",
+    "seller_note": "Special instructions",
+    "shipping_policy": "Shipping calculated at checkout.",
+    "shipping_policy_html": "<a href=\"{{ link }}\">Shipping</a> calculated at checkout.",
+    "store_owner_link_html": "Are you the store owner? <a href=\"{{ link }}\">Log in here</a>",
+    "taxes_at_checkout_shipping_at_checkout_with_policy_html": "Taxes, discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+    "taxes_at_checkout_shipping_at_checkout_with_policy_without_discounts_html": "Taxes and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+    "taxes_at_checkout_shipping_at_checkout_without_policy": "Taxes, discounts and shipping calculated at checkout.",
+    "taxes_at_checkout_shipping_at_checkout_without_policy_without_discounts": "מיסים ומשלוח מחושבים בשלב השלמת הרכישה",
+    "taxes_included": "Taxes included.",
+    "taxes_included_shipping_at_checkout_with_policy_html": "Taxes included. Discounts and <a href=\"{{ link }}\">shipping</a> calculated at checkout.",
+    "taxes_included_shipping_at_checkout_with_policy_without_discounts_html": "Taxes included. Shipping is calculated at checkout.",
+    "taxes_included_shipping_at_checkout_without_policy": "Taxes included. Discounts and shipping calculated at checkout.",
+    "taxes_included_shipping_at_checkout_without_policy_without_discounts": "Taxes included. Shipping is calculated at checkout.",
+    "unavailable": "Unavailable",
+    "use_fewer_filters_html": "Try using fewer filters, or <a class=\"{{ class }}\" href=\"{{ link }}\">clear all filters</a>.",
+    "view_more_details": "View more details",
+    "your_cart_is_empty": "העגלה שלך ריקה",
+    "product_count": "Product count",
+    "errors": "Errors",
+    "wrong_password": "Wrong password",
+    "recipient_form_send_to": "Send to",
+    "recipient_form_email_label": "Recipient’s email",
+    "recipient_form_email_label_my_email": "My email",
+    "recipient_form_email_address": "Recipient email address",
+    "recipient_form_name_label": "Recipient name (optional)",
+    "recipient_form_message": "Message (optional)",
+    "recipient_form_characters_used": "{{ used_chars }}/{{ max_chars }} characters used",
+    "recipient_form_send_on": "YYYY-MM-DD",
+    "recipient_form_send_on_label": "Send on (optional)",
+    "recipient_form_fields_visible": "Recipient form fields are now visible",
+    "recipient_form_fields_hidden": "Recipient form fields are now hidden",
+    "recipient_form_error": "There was an error with the form submission",
+    "product_custom_property_character_count": "{{ used_chars }}/{{ max_chars }} characters used"
+  },
+  "fields": {
+    "separator": "אל"
+  },
+  "gift_cards": {
+    "issued": {
+      "how_to_use_gift_card": "Use the gift card code online or QR code in-store",
+      "title": "Here's your {{ value }} gift card balance for {{ shop }}!",
+      "subtext": "Your gift card",
+      "shop_link": "Visit online store",
+      "add_to_apple_wallet": "Add to Apple Wallet",
+      "qr_image_alt": "QR code — scan to redeem gift card",
+      "copy_code": "Copy gift card code",
+      "expiration_date": "Expires {{ expires_on }}",
+      "copy_code_success": "Code copied successfully",
+      "expired": "Expired"
+    }
+  },
+  "placeholders": {
+    "password": "סיסמא",
+    "search": "חיפוש",
+    "product_title": "כותרת מוצר",
+    "collection_title": "כותרת קטגוריה",
+    "blog_posts": "Blog Posts",
+    "blog_post_title": "Title",
+    "blog_post_author": "Author",
+    "blog_post_date": "Date",
+    "blog_post_description": "An excerpt of your blog post's content"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "הוסף לעגלה",
+      "adding_to_cart": "מוסיף...",
+      "added_to_cart": "נוסף לעגלה",
+      "add_to_cart_error": "שגיאה בהוספה לעגלה",
+      "quantity_error_max": "למוצר זה יש מקסימום {{ maximum }}",
+      "sold_out": "Sold out",
+      "unavailable": "לא זמין",
+      "quantity": "כמות",
+      "quantity_increments": "הוספה של {{ increment }}",
+      "quantity_minimum": "כמות מינימלית {{ minimum }}",
+      "quantity_maximum": "כמות מקסימלית {{ maximum }}",
+      "in_cart": "בעגלה"
+    }
+  },
+  "shopify": {
+    "checkout": {
+      "address_management": {
+        "confirm_address_deletion": "אתה בטוח שאתה מעוניין להסיר את הכתובת"
+      },
+      "general": {
+        "page_title": "סיכום",
+        "error_page_title": "שגיאה",
+        "skip_to_content": "דלג",
+        "continue_button_label": "המשך",
+        "complete_purchase_button_label": "השלם קנייה",
+        "pay_now_button_label": "שלם כעת",
+        "edit_link_label": "ערוך",
+        "all_rights_reserved": "כל הזכויות שמורות לישיר לצרכן",
+        "print_policies_link_label": "הדפס",
+        "cart": "עגלה",
+        "close_modal_label": "סגור",
+        "close_notice_label": "סגור",
+        "continue_to_shipping_method": "המשך לשיטת משלוח",
+        "continue_to_payment_method": "המשך לשיטת תשלום",
+        "continue_to_review": "המשך למעבר על ההזמנה",
+        "back_to_cart": "חזור לעגלה",
+        "back_to_contact_information": "חזור לפרטי איש קשר",
+        "back_to_shipping_method": "חזור לפרטי משלוח",
+        "back_to_payment_method": "חזור לאמצעי תשלום",
+        "choose_shipping_method": "בחר שיטת משלוח",
+        "choose_payment_method": "בחר שיטת תשלום",
+        "choose_billing_address": "בחר כתובת לתשלום",
+        "contact_us_html": "לפרטים נוספים צור קשר",
+        "forwarding_indicator": {
+          "new_window": "פתח בחלון חדש"
+        },
+        "full_price": "מחיר מלא:",
+        "loading": "טוען",
+        "errors": {
+          "discount": {
+            "allocations_mismatch": "קוד ההנחה השתנה"
+          }
+        },
+        "submit_order_button_label": "שלח הזמנה",
+        "submit": "שלח"
+      },
+      "order_summary": {
+        "discount_label": "קוד הנחה",
+        "discount_placeholder": "קוד הנחה",
+        "discount_code_applied": "קוד הנחה הופעל",
+        "discount_code_applied_with_code": "קוד הנחה הופעל",
+        "discount_code_removed": "קוד הנחה הוסר",
+        "discount_code_replaced": "קוד הנחה הוחלף",
+        "discount_code_aria_text": "קוד הנחה",
+        "maximum_discount_code_limit_reached": "הגעת למקסימום קודי הנחה",
+        "discount_title": "הנחה",
+        "discount_title_stacking": {
+          "one": "הנחה",
+          "other": "הנחות"
+        },
+        "discount_order_stacking": {
+          "one": "הנחה",
+          "other": "הנחות"
+        },
+        "discount_discovery": {
+          "add_code": "הוסף קוד הנחה"
+        }
+      },
+      "payment": {
+        "discount_button_action_label": "החל קוד הנחה"
+      },
+      "post_purchase": {
+        "components": {
+          "submit": "שלח"
+        }
+      }
+    },
+    "challenge": {
+      "submit_button_text": "שלח"
+    },
+    "checkpoint": {
+      "submit_button_text": "שלח"
+    }
+  },
+  "customer_accounts": {
+    "order_details": {
+      "discount": "הנחה",
+      "shipping": {
+        "free_shipping_discount": "משלוח חינם"
+      }
+    },
+    "ui_components": {
+      "submit": "שלח"
+    },
+    "sign_in": {
+      "step_two": {
+        "button": "שלח"
+      }
+    }
+  }
+}

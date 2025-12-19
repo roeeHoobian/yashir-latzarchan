@@ -1,0 +1,73 @@
+/* === GLOBAL RTL FIXES === */
+html[dir="rtl"] {
+  direction: rtl;
+}
+
+body {
+  text-align: right;
+}
+
+/* Flip flex layouts */
+html[dir="rtl"] .grid,
+html[dir="rtl"] .flex {
+  direction: rtl;
+}
+
+/* Header / Navigation */
+html[dir="rtl"] .header__menu-item {
+  text-align: right;
+}
+
+/* Icons spacing */
+html[dir="rtl"] .icon {
+  transform: scaleX(-1);
+}
+
+/* Buttons & links */
+html[dir="rtl"] .button,
+html[dir="rtl"] a {
+  text-align: center;
+}
+
+/* Product page */
+html[dir="rtl"] .product__info {
+  text-align: right;
+}
+
+/* Forms */
+html[dir="rtl"] input,
+html[dir="rtl"] textarea {
+  text-align: right;
+}
+
+html[dir="rtl"] .ml-1 { margin-right: 0.25rem; margin-left: 0; }
+html[dir="rtl"] .ml-2 { margin-right: 0.5rem; margin-left: 0; }
+
+html[dir="rtl"] .price {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+html[dir="rtl"] .slider {
+  direction: rtl;
+}
+
+html[dir="rtl"] .slider-button--prev {
+  right: 0;
+  left: auto;
+}
+
+html[dir="rtl"] .slider-button--next {
+  left: 0;
+  right: auto;
+}
+
+html[dir="rtl"] .price {
+  direction: ltr;
+  text-align: right;
+}
+
+html[dir="rtl"] .account-popover__panel {
+  right: unset;
+  left: anchor(left);
+}
