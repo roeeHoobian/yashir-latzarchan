@@ -7,6 +7,12 @@ body {
   text-align: right;
 }
 
+/* CRITICAL: Prevent horizontal scroll */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  overflow-x: hidden;
+}
+
 /* Flip flex layouts */
 html[dir="rtl"] .grid,
 html[dir="rtl"] .flex {
@@ -18,8 +24,9 @@ html[dir="rtl"] .header__menu-item {
   text-align: right;
 }
 
-/* Icons spacing */
-html[dir="rtl"] .icon {
+/* Icons spacing - be selective, don't flip all icons */
+html[dir="rtl"] .icon--arrow,
+html[dir="rtl"] .icon--chevron {
   transform: scaleX(-1);
 }
 
@@ -70,4 +77,327 @@ html[dir="rtl"] .price {
 html[dir="rtl"] .account-popover__panel {
   right: unset;
   left: anchor(left);
+}
+
+/* ===========================================
+   MOBILE MENU DRAWER RTL FIXES
+   =========================================== */
+
+/* Fix menu drawer position - slide from RIGHT in RTL */
+html[dir="rtl"] .menu-drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+  border-right: none;
+  border-left: var(--style-border-drawer);
+}
+
+/* When menu is open, slide to 0 */
+html[dir="rtl"] .menu-open > .menu-drawer {
+  transform: translateX(0);
+}
+
+/* Fix submenu positioning */
+html[dir="rtl"] .menu-drawer__submenu {
+  left: auto;
+  right: 0;
+  transform: translateX(5%);
+}
+
+html[dir="rtl"] .menu-open > .menu-drawer__submenu:not(.menu-drawer__menu--childlist) {
+  transform: translateX(0);
+}
+
+/* Fix text alignments in menu drawer */
+html[dir="rtl"] .menu-drawer__back-button {
+  text-align: right;
+}
+
+html[dir="rtl"] .menu-drawer__menu-item {
+  text-align: right;
+}
+
+html[dir="rtl"] .localization-form__select {
+  text-align: right;
+}
+
+/* Fix back button icon margin */
+html[dir="rtl"] .menu-drawer__back-button > .svg-wrapper {
+  margin-right: 0;
+  margin-left: var(--padding-md);
+}
+
+/* Fix shop user avatar margins */
+html[dir="rtl"] .menu-drawer__account shop-user-avatar {
+  margin-right: -0.45rem;
+  margin-left: 0.55rem;
+}
+
+/* ===========================================
+   CART DRAWER RTL FIXES
+   =========================================== */
+
+/* Fix cart drawer position - should be on LEFT in RTL */
+html[dir="rtl"] .cart-drawer__dialog {
+  margin: 0 auto 0 0;
+  border-left: none;
+  border-right: var(--style-border-drawer);
+}
+
+/* Fix cart drawer close button */
+html[dir="rtl"] .cart-drawer__close-button {
+  margin-right: 0;
+  margin-left: calc(var(--padding-sm) * -1);
+}
+
+/* Fix empty cart drawer header alignment */
+html[dir="rtl"] .cart-drawer--empty .cart-drawer__header {
+  justify-content: left;
+}
+
+/* Fix cart bubble position */
+html[dir="rtl"] .header-actions__cart-icon .cart-bubble {
+  right: auto;
+  left: var(--cart-bubble-right);
+}
+
+/* Fix cart icon mask for RTL */
+html[dir="rtl"] .header-actions__cart-icon.header-actions__cart-icon--has-cart svg {
+  mask: radial-gradient(
+    calc(var(--cart-bubble-size) + 2px) at var(--cart-bubble-right) var(--cart-bubble-top),
+    transparent 45.45%,
+    #fff 45.45%,
+    #fff 100%
+  );
+}
+
+/* ===========================================
+   ANIMATION KEYFRAMES RTL OVERRIDES
+   =========================================== */
+
+/* Override menu drawer animations for RTL */
+@keyframes menu-drawer-nav-open-rtl {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(0.5rem);
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes menu-drawer-subnav-open-rtl {
+  0% {
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(1rem);
+  }
+}
+
+/* Apply RTL animations */
+html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__animated-element {
+  animation-name: menu-drawer-nav-open-rtl;
+}
+
+/* ===========================================
+   HEADER ACTIONS RTL FIXES
+   =========================================== */
+
+html[dir="rtl"] header-actions {
+  justify-self: flex-start;
+}
+
+html[dir="rtl"] .header__column--right header-actions {
+  margin-inline-start: 0;
+  margin-inline-end: calc(var(--gap-md) * -1);
+}
+
+/* ===========================================
+   DIALOG/DRAWER GENERAL RTL FIXES
+   =========================================== */
+
+/* Generic drawer that slides from left in LTR should slide from right in RTL */
+html[dir="rtl"] .dialog-drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(100%);
+}
+
+html[dir="rtl"] .dialog-drawer[open] {
+  transform: translateX(0);
+}
+
+/* Drawers specifically meant for right side in LTR should be on left in RTL */
+html[dir="rtl"] .dialog-drawer--right {
+  right: auto;
+  left: 0;
+  transform: translateX(-100%);
+}
+
+html[dir="rtl"] .dialog-drawer--right[open] {
+  transform: translateX(0);
+}
+
+/* ===========================================
+   ADDITIONAL MOBILE FIXES
+   =========================================== */
+
+/* Ensure backdrop covers full viewport */
+html[dir="rtl"] .menu-drawer__backdrop {
+  left: 0;
+  right: 0;
+}
+
+/* Fix mobile header column alignment */
+@media screen and (max-width: 749px) {
+  html[dir="rtl"] .header__columns {
+    padding-inline: var(--padding-3xs) 0;
+  }
+}
+
+/* ===========================================
+   GENERIC DRAWER CLASS RTL FIX (from base.css)
+   =========================================== */
+
+html[dir="rtl"] .drawer {
+  left: auto;
+  right: 0;
+  transform: translateX(120%);
+}
+
+html[dir="rtl"] .drawer[data-open='true'] {
+  transform: translateX(0);
+}
+
+/* ===========================================
+   MENU DRAWER CLOSE BUTTON RTL FIX
+   =========================================== */
+
+html[dir="rtl"] .menu-drawer__close-button {
+  position: absolute;
+  left: var(--padding-sm);
+  right: auto;
+}
+
+/* ===========================================
+   HEADER ICON POSITIONING FIX
+   =========================================== */
+
+/* Ensure the header drawer opens from the correct side */
+html[dir="rtl"] .header-drawer {
+  direction: rtl;
+}
+
+/* ===========================================
+   MOBILE HEADER VISIBILITY FIX
+   =========================================== */
+
+/* Ensure header is always visible and above other elements */
+html[dir="rtl"] .header,
+html[dir="rtl"] header-component {
+  position: relative;
+  z-index: var(--layer-sticky, 100);
+}
+
+/* Fix transparent header positioning in RTL */
+html[dir="rtl"] .header[transparent] {
+  left: 0;
+  right: 0;
+}
+
+/* Ensure menu-drawer-container doesn't affect header visibility when closed */
+html[dir="rtl"] .menu-drawer-container:not([open]) .menu-drawer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ===========================================
+   SEARCH MODAL RTL FIXES
+   =========================================== */
+
+html[dir="rtl"] .search-modal {
+  text-align: right;
+}
+
+html[dir="rtl"] .search-modal__input {
+  text-align: right;
+}
+
+/* ===========================================
+   ACCOUNT DRAWER RTL FIXES
+   =========================================== */
+
+html[dir="rtl"] .account-drawer__dialog {
+  margin: 0 auto 0 0;
+  border-left: none;
+  border-right: var(--style-border-drawer);
+}
+
+/* IMPORTANT: Override the base .close-button which has position:fixed; right: var(--margin-lg)
+   We need to flip it to the LEFT side in RTL */
+html[dir="rtl"] .close-button {
+  right: auto !important;
+  left: var(--margin-lg);
+}
+
+/* Specific fix for account drawer close button */
+html[dir="rtl"] .account-drawer__close-button {
+  right: auto !important;
+  left: var(--padding-xs);
+}
+
+/* Ensure account actions header aligns right */
+html[dir="rtl"] .account-actions__header {
+  text-align: right;
+}
+
+html[dir="rtl"] .account-actions__title {
+  text-align: right;
+}
+
+/* ===========================================
+   PREDICTIVE SEARCH / SEARCH MODAL RTL FIXES
+   =========================================== */
+
+/* IMPORTANT: The search icon uses position:absolute; left: var(--margin-xl)
+   We need to flip it to the RIGHT side in RTL */
+html[dir="rtl"] .predictive-search__icon {
+  display: none;
+}
+
+@media screen and (min-width: 750px) {
+  html[dir="rtl"] .predictive-search__icon {
+    right: var(--margin-md);
+  }
+}
+
+/* Fix input padding - in RTL, padding should be on the RIGHT for the icon */
+html[dir="rtl"] .search-input {
+  padding-inline: 0 calc(var(--margin-lg) + var(--icon-size-lg));
+  text-align: right;
+}
+
+/* Fix the divider line position for RTL */
+html[dir="rtl"] .dialog-modal .predictive-search-form__header:has(
+  .predictive-search__reset-button:not(.predictive-search__reset-button[hidden])
+)::before {
+  right: auto;
+  left: calc(var(--padding-sm) + var(--minimum-touch-target));
+}
+
+@media screen and (min-width: 750px) {
+  html[dir="rtl"] .dialog-modal .predictive-search-form__header:has(
+    .predictive-search__reset-button:not(.predictive-search__reset-button[hidden])
+  )::before {
+    right: auto;
+    left: calc(var(--padding-2xl) * 2);
+  }
 }
