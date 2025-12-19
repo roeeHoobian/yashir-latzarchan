@@ -332,7 +332,7 @@ html[dir="rtl"] .header[transparent] {
 }
 
 /* Ensure menu drawer is properly hidden when closed */
-html[dir="rtl"] .menu-drawer-container:not([open]) > .menu-drawer {
+html[dir="rtl"] .menu-drawer-container:not(.menu-open) > .menu-drawer {
   visibility: hidden;
   pointer-events: none;
   transform: translateX(100%);
