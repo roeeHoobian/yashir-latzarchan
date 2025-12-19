@@ -92,9 +92,13 @@ html[dir="rtl"] .menu-drawer {
   border-left: var(--style-border-drawer);
 }
 
-/* When menu is open, slide to 0 */
-html[dir="rtl"] .menu-open > .menu-drawer {
-  transform: translateX(0);
+/* When menu is open, slide to 0 and make visible */
+html[dir="rtl"] .menu-open > .menu-drawer,
+html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
+html[dir="rtl"] details[open] > .menu-drawer {
+  transform: translateX(0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Fix submenu positioning */
@@ -313,10 +317,19 @@ html[dir="rtl"] .header[transparent] {
   right: 0;
 }
 
-/* Ensure menu-drawer-container doesn't affect header visibility when closed */
-html[dir="rtl"] .menu-drawer-container:not([open]) .menu-drawer {
+/* Ensure menu drawer is properly hidden when closed */
+html[dir="rtl"] .menu-drawer-container:not([open]) > .menu-drawer {
   visibility: hidden;
   pointer-events: none;
+  transform: translateX(100%);
+}
+
+/* Ensure menu drawer is visible when open */
+html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer {
+  visibility: visible !important;
+  pointer-events: auto;
+  opacity: 1 !important;
+  transform: translateX(0) !important;
 }
 
 /* ===========================================
