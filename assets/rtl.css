@@ -87,32 +87,25 @@ html[dir="rtl"] .account-popover__panel {
 html[dir="rtl"] .menu-drawer {
   left: auto;
   right: 0;
-  transform: translate3d(100%, 0, 0);
+  transform: translateX(100%);
   border-right: none;
   border-left: var(--style-border-drawer);
 }
 
-/* When menu is open, slide to 0 and make visible */
-html[dir="rtl"] .menu-open > .menu-drawer,
-html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
-html[dir="rtl"] details[open] > .menu-drawer,
-html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
-  transform: translate3d(0, 0, 0) !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  display: flex !important;
-  flex-direction: column !important;
+/* When menu is open, slide to 0 */
+html[dir="rtl"] .menu-open > .menu-drawer {
+  transform: translateX(0);
 }
 
 /* Fix submenu positioning */
 html[dir="rtl"] .menu-drawer__submenu {
   left: auto;
   right: 0;
-  transform: translate3d(5%, 0, 0);
+  transform: translateX(5%);
 }
 
 html[dir="rtl"] .menu-open > .menu-drawer__submenu:not(.menu-drawer__menu--childlist) {
-  transform: translate3d(0, 0, 0);
+  transform: translateX(0);
 }
 
 /* Fix text alignments in menu drawer */
@@ -187,12 +180,12 @@ html[dir="rtl"] .header-actions__cart-icon.header-actions__cart-icon--has-cart s
   0% {
     visibility: hidden;
     opacity: 0;
-    transform: translate3d(0.5rem, 0, 0);
+    transform: translateX(0.5rem);
   }
   100% {
     visibility: visible;
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
 }
 
@@ -200,12 +193,12 @@ html[dir="rtl"] .header-actions__cart-icon.header-actions__cart-icon--has-cart s
   0% {
     visibility: visible;
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateX(0);
   }
   100% {
     visibility: hidden;
     opacity: 0;
-    transform: translate3d(1rem, 0, 0);
+    transform: translateX(1rem);
   }
 }
 
@@ -218,17 +211,13 @@ html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__animated-element {
    HEADER ACTIONS RTL FIXES
    =========================================== */
 
-/* Ensure cart icon and header actions are visible on mobile */
 html[dir="rtl"] header-actions {
-  display: flex !important;
-  visibility: visible !important;
+  justify-self: flex-start;
 }
 
-html[dir="rtl"] .header-actions__action,
-html[dir="rtl"] .action__cart,
-html[dir="rtl"] .header-actions__cart-icon {
-  display: flex !important;
-  visibility: visible !important;
+html[dir="rtl"] .header__column--right header-actions {
+  margin-inline-start: 0;
+  margin-inline-end: calc(var(--gap-md) * -1);
 }
 
 /* ===========================================
@@ -239,22 +228,22 @@ html[dir="rtl"] .header-actions__cart-icon {
 html[dir="rtl"] .dialog-drawer {
   left: auto;
   right: 0;
-  transform: translate3d(100%, 0, 0);
+  transform: translateX(100%);
 }
 
 html[dir="rtl"] .dialog-drawer[open] {
-  transform: translate3d(0, 0, 0);
+  transform: translateX(0);
 }
 
 /* Drawers specifically meant for right side in LTR should be on left in RTL */
 html[dir="rtl"] .dialog-drawer--right {
   right: auto;
   left: 0;
-  transform: translate3d(-100%, 0, 0);
+  transform: translateX(-100%);
 }
 
 html[dir="rtl"] .dialog-drawer--right[open] {
-  transform: translate3d(0, 0, 0);
+  transform: translateX(0);
 }
 
 /* ===========================================
@@ -265,13 +254,6 @@ html[dir="rtl"] .dialog-drawer--right[open] {
 html[dir="rtl"] .menu-drawer__backdrop {
   left: 0;
   right: 0;
-}
-
-/* Show backdrop when menu is open */
-html[dir="rtl"] .menu-open .menu-drawer__backdrop,
-html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__backdrop {
-  opacity: 1 !important;
-  visibility: visible !important;
 }
 
 /* Fix mobile header column alignment */
@@ -288,11 +270,11 @@ html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__backdrop {
 html[dir="rtl"] .drawer {
   left: auto;
   right: 0;
-  transform: translate3d(120%, 0, 0);
+  transform: translateX(120%);
 }
 
 html[dir="rtl"] .drawer[data-open='true'] {
-  transform: translate3d(0, 0, 0);
+  transform: translateX(0);
 }
 
 /* ===========================================
@@ -331,23 +313,10 @@ html[dir="rtl"] .header[transparent] {
   right: 0;
 }
 
-/* Ensure menu drawer is properly hidden when closed */
-html[dir="rtl"] .menu-drawer-container:not(.menu-open) > .menu-drawer {
+/* Ensure menu-drawer-container doesn't affect header visibility when closed */
+html[dir="rtl"] .menu-drawer-container:not([open]) .menu-drawer {
   visibility: hidden;
   pointer-events: none;
-  transform: translate3d(100%, 0, 0);
-}
-
-/* Ensure menu drawer is visible when open */
-html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
-html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
-  visibility: visible !important;
-  pointer-events: auto;
-  opacity: 1 !important;
-  transform: translate3d(0, 0, 0) !important;
-  display: flex !important;
-  flex-direction: column !important;
-  z-index: 9999 !important;
 }
 
 /* ===========================================
