@@ -75,6 +75,23 @@ class HeaderDrawer extends Component {
     this.preventInitialAccordionAnimations(details);
     requestAnimationFrame(() => {
       details.classList.add('menu-open');
+      
+      // iOS RTL fix: Force correct positioning for drawer in RTL mode
+      const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+      const drawer = details.querySelector('.menu-drawer');
+      if (isRTL && drawer && drawer instanceof HTMLElement) {
+        drawer.style.setProperty('transition', 'none', 'important');
+        drawer.style.setProperty('transform', 'translate3d(0, 0, 0)', 'important');
+        drawer.style.setProperty('right', '0', 'important');
+        drawer.style.setProperty('left', 'auto', 'important');
+        
+        setTimeout(() => {
+          if (drawer instanceof HTMLElement) {
+            drawer.style.removeProperty('transition');
+          }
+        }, 50);
+      }
+      
       setTimeout(() => {
         trapFocus(details);
       }, 0);
@@ -108,6 +125,15 @@ class HeaderDrawer extends Component {
 
     summary.setAttribute('aria-expanded', 'false');
     details.classList.remove('menu-open');
+
+    // iOS RTL fix: Clear inline styles when closing
+    const isRTL = document.documentElement.getAttribute('dir') === 'rtl';
+    const drawer = details.querySelector('.menu-drawer');
+    if (isRTL && drawer && drawer instanceof HTMLElement) {
+      drawer.style.transform = '';
+      drawer.style.right = '';
+      drawer.style.left = '';
+    }
 
     onAnimationEnd(details, () => {
       reset(details);

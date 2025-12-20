@@ -87,7 +87,7 @@ html[dir="rtl"] .account-popover__panel {
 html[dir="rtl"] .menu-drawer {
   left: auto;
   right: 0;
-  transform: translateX(100%);
+  transform: translate3d(100%, 0, 0);
   border-right: none;
   border-left: var(--style-border-drawer);
 }
@@ -97,7 +97,7 @@ html[dir="rtl"] .menu-open > .menu-drawer,
 html[dir="rtl"] .menu-drawer-container[open] > .menu-drawer,
 html[dir="rtl"] details[open] > .menu-drawer,
 html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
-  transform: translateX(0) !important;
+  transform: translate3d(0, 0, 0) !important;
   visibility: visible !important;
   opacity: 1 !important;
   display: flex !important;
@@ -108,11 +108,11 @@ html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
 html[dir="rtl"] .menu-drawer__submenu {
   left: auto;
   right: 0;
-  transform: translateX(5%);
+  transform: translate3d(5%, 0, 0);
 }
 
 html[dir="rtl"] .menu-open > .menu-drawer__submenu:not(.menu-drawer__menu--childlist) {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* Fix text alignments in menu drawer */
@@ -187,12 +187,12 @@ html[dir="rtl"] .header-actions__cart-icon.header-actions__cart-icon--has-cart s
   0% {
     visibility: hidden;
     opacity: 0;
-    transform: translateX(0.5rem);
+    transform: translate3d(0.5rem, 0, 0);
   }
   100% {
     visibility: visible;
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
 }
 
@@ -200,12 +200,12 @@ html[dir="rtl"] .header-actions__cart-icon.header-actions__cart-icon--has-cart s
   0% {
     visibility: visible;
     opacity: 1;
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
     visibility: hidden;
     opacity: 0;
-    transform: translateX(1rem);
+    transform: translate3d(1rem, 0, 0);
   }
 }
 
@@ -239,22 +239,22 @@ html[dir="rtl"] .header-actions__cart-icon {
 html[dir="rtl"] .dialog-drawer {
   left: auto;
   right: 0;
-  transform: translateX(100%);
+  transform: translate3d(100%, 0, 0);
 }
 
 html[dir="rtl"] .dialog-drawer[open] {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* Drawers specifically meant for right side in LTR should be on left in RTL */
 html[dir="rtl"] .dialog-drawer--right {
   right: auto;
   left: 0;
-  transform: translateX(-100%);
+  transform: translate3d(-100%, 0, 0);
 }
 
 html[dir="rtl"] .dialog-drawer--right[open] {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ===========================================
@@ -288,11 +288,11 @@ html[dir="rtl"] .menu-drawer-container[open] .menu-drawer__backdrop {
 html[dir="rtl"] .drawer {
   left: auto;
   right: 0;
-  transform: translateX(120%);
+  transform: translate3d(120%, 0, 0);
 }
 
 html[dir="rtl"] .drawer[data-open='true'] {
-  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
 }
 
 /* ===========================================
@@ -335,7 +335,7 @@ html[dir="rtl"] .header[transparent] {
 html[dir="rtl"] .menu-drawer-container:not(.menu-open) > .menu-drawer {
   visibility: hidden;
   pointer-events: none;
-  transform: translateX(100%);
+  transform: translate3d(100%, 0, 0);
 }
 
 /* Ensure menu drawer is visible when open */
@@ -344,7 +344,7 @@ html[dir="rtl"] .menu-drawer-container.menu-open > .menu-drawer {
   visibility: visible !important;
   pointer-events: auto;
   opacity: 1 !important;
-  transform: translateX(0) !important;
+  transform: translate3d(0, 0, 0) !important;
   display: flex !important;
   flex-direction: column !important;
   z-index: 9999 !important;
