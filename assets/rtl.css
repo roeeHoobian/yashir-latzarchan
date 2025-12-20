@@ -8,10 +8,27 @@ body {
 }
 
 /*
- * iOS FIX: Do NOT use overflow-x: hidden on html/body
- * This breaks position: fixed elements on iOS Safari/Chrome.
- * Instead, we fix the actual sources of horizontal overflow.
+ * iOS Safari Paint Bug Workaround:
+ * Force repaint using a micro-animation on page load.
+ * This tricks iOS into properly painting elements that would otherwise be invisible.
  */
+@-webkit-keyframes iosForceRepaint {
+  from { opacity: 0.999; }
+  to { opacity: 1; }
+}
+@keyframes iosForceRepaint {
+  from { opacity: 0.999; }
+  to { opacity: 1; }
+}
+
+/* Prevent horizontal scroll - using hidden since clip may not be fully supported */
+html[dir="rtl"],
+html[dir="rtl"] body {
+  overflow-x: hidden;
+  /* Force compositing layer to help with fixed positioning on iOS */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
 
 /* Flip flex layouts */
 html[dir="rtl"] .grid,
@@ -84,20 +101,25 @@ html[dir="rtl"] .account-popover__panel {
    =========================================== */
 
 /* Fix menu drawer position - slide from RIGHT in RTL */
+/* iOS FIX: backface-visibility forces compositing layer for reliable paint */
 html[dir="rtl"] .menu-drawer {
   left: auto;
   right: 0;
   transform: translateX(100%);
   border-right: none;
   border-left: var(--style-border-drawer);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 /* When menu is open, slide to 0 */
-/* iOS FIX: Explicitly set visibility/opacity to override any competing rules */
+/* iOS FIX: Force repaint with animation when drawer opens */
 html[dir="rtl"] .menu-open > .menu-drawer {
   transform: translateX(0);
-  visibility: visible;
-  opacity: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
+  -webkit-animation: iosForceRepaint 0.001s linear 1;
+  animation: iosForceRepaint 0.001s linear 1;
 }
 
 /* Fix submenu positioning */
@@ -303,38 +325,34 @@ html[dir="rtl"] .header-drawer {
 }
 
 /* ===========================================
-   MOBILE HEADER VISIBILITY FIX
+   MOBILE HEADER VISIBILITY FIX (iOS Safari Paint Bug)
    =========================================== */
 
-/* Ensure header is always visible and above other elements */
-/* iOS FIX: transform: translateZ(0) forces GPU compositing layer for reliable rendering */
+/*
+ * iOS Safari Paint Bug Fix:
+ * Apply micro-animation to force iOS to paint these elements.
+ * Without this, elements may be interactive but invisible.
+ */
+html[dir="rtl"] .header,
+html[dir="rtl"] header-component,
+html[dir="rtl"] .header-drawer,
+html[dir="rtl"] .menu-drawer-container,
+html[dir="rtl"] .header__icon--menu,
+html[dir="rtl"] .header__icon--summary {
+  -webkit-animation: iosForceRepaint 0.001s linear 1;
+  animation: iosForceRepaint 0.001s linear 1;
+}
+
 html[dir="rtl"] .header,
 html[dir="rtl"] header-component {
   position: relative;
   z-index: var(--layer-sticky, 100);
-  transform: translateZ(0);
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-/* Ensure the hamburger menu icon is always visible and clickable */
-html[dir="rtl"] .header__icon--menu,
-html[dir="rtl"] .header__icon--summary {
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
 }
 
 /* Fix transparent header positioning in RTL */
 html[dir="rtl"] .header[transparent] {
   left: 0;
   right: 0;
-}
-
-/* Ensure menu-drawer-container doesn't affect header visibility when closed */
-html[dir="rtl"] .menu-drawer-container:not([open]) .menu-drawer {
-  visibility: hidden;
-  pointer-events: none;
 }
 
 /* ===========================================
