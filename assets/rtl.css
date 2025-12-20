@@ -307,10 +307,22 @@ html[dir="rtl"] .header-drawer {
    =========================================== */
 
 /* Ensure header is always visible and above other elements */
+/* iOS FIX: transform: translateZ(0) forces GPU compositing layer for reliable rendering */
 html[dir="rtl"] .header,
 html[dir="rtl"] header-component {
   position: relative;
   z-index: var(--layer-sticky, 100);
+  transform: translateZ(0);
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Ensure the hamburger menu icon is always visible and clickable */
+html[dir="rtl"] .header__icon--menu,
+html[dir="rtl"] .header__icon--summary {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
 }
 
 /* Fix transparent header positioning in RTL */
