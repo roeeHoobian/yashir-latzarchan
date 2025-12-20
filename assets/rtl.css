@@ -7,11 +7,11 @@ body {
   text-align: right;
 }
 
-/* CRITICAL: Prevent horizontal scroll */
-html[dir="rtl"],
-html[dir="rtl"] body {
-  overflow-x: hidden;
-}
+/*
+ * iOS FIX: Do NOT use overflow-x: hidden on html/body
+ * This breaks position: fixed elements on iOS Safari/Chrome.
+ * Instead, we fix the actual sources of horizontal overflow.
+ */
 
 /* Flip flex layouts */
 html[dir="rtl"] .grid,
@@ -93,8 +93,11 @@ html[dir="rtl"] .menu-drawer {
 }
 
 /* When menu is open, slide to 0 */
+/* iOS FIX: Explicitly set visibility/opacity to override any competing rules */
 html[dir="rtl"] .menu-open > .menu-drawer {
   transform: translateX(0);
+  visibility: visible;
+  opacity: 1;
 }
 
 /* Fix submenu positioning */
@@ -251,9 +254,12 @@ html[dir="rtl"] .dialog-drawer--right[open] {
    =========================================== */
 
 /* Ensure backdrop covers full viewport */
+/* iOS FIX: Use width: 100% instead of 100vw to prevent horizontal scroll */
+/* 100vw includes scrollbar width and causes overflow on iOS */
 html[dir="rtl"] .menu-drawer__backdrop {
   left: 0;
   right: 0;
+  width: 100%;
 }
 
 /* Fix mobile header column alignment */
