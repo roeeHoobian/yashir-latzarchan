@@ -541,6 +541,14 @@
 
       header-actions {
         grid-area: rightB;
+        display: flex;
+        gap: 0;
+      }
+
+      /* When both account and cart buttons are present, span rightA and rightB */
+      header-actions:has(.account-drawer):has(.cart-drawer),
+      header-actions:has(.account-drawer):has(.action__cart) {
+        grid-area: rightA / rightA / rightB / rightB;
       }
     }
   }
